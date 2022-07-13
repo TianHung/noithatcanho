@@ -115,7 +115,6 @@
          />
 
 
-
 	</scene>
 
 	<scene name="scene_phong_khach_2" title="Phòng Khách 2" onstart="" thumburl="panos/Phong_Khach_2.tiles/thumb.jpg" lat="" lng="" heading="">
@@ -218,7 +217,6 @@
 			</level>
 		</image>
 		<hotspot name="scene_phong_khach_5" style="hs_circle" ath="-154.703" atv="-6.326" linkedscene="scene_phong_khach_5" tag="Hành Lang Phòng Ngủ"/>
-		<hotspot name="Bon_rua_matVT" style="hs_circle" title="Bồn rửa mặt VT" onhover="showtext('Bồn rửa mặt VT');" ath="-51.967" atv="7.192" linkedscene="Bon_rua_matVT" onclick="js(CallFancy('/Viewer3D.html'));js(ChangeTitleByPdfName('Bồn rửa mặt VT cao cấp')))" tag="Bồn rửa mặt" />
 
 	</scene>
 

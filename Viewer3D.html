@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>three.js webgl - GLTFloader</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	</head>
+
+	<body>
+
+		<div id="3dScene" onmousedown="isloop=false" onmouseup="isloop=true">
+			<div class="nk-main" style="width:100%; position:relative; " id="scene">
+				<div id="mute"><i class="fa fa-volume-up" style="font-size:25px; color:white" aria-hidden="true"></i></div>
+			</div>
+		</div>
+
+		<script type="importmap">
+			{
+				"imports": {
+					"three": "/plugins/threejs/three.module.js"
+				}
+			}
+		</script>
+
+	<script type="module">
+
+		import * as THREE from 'three';
+
+		import { OrbitControls } from './plugins/threejs/OrbitControls.js';
+		import { GLTFLoader } from './plugins/threejs/GLTFLoader.js';
+		import { RGBELoader } from './plugins/threejs/RGBELoader.js';
+
+	var camera, scene, renderer, spotlight, hermitlight, isloop;
+    var car;
+    var gltf_loader = new GLTFLoader();
+
+    var model = "/plugins/threejs/hdr/background.hdr";
+    var model2 = "/plugins/threejs/hdr/forest_slope_2k.hdr";
+    var model3 = "/plugins/threejs/hdr/lakeside_2k.hdr";
+    var ranhdr = Math.floor(Math.random() * 10);
+    var hdr;
+    if (ranhdr > 4) {
+        hdr = model3;
+    }
+    else if (ranhdr <= 4 && ranhdr > 2) {
+        hdr = model2;
+    }
+    else { hdr = model; }
+    init();
+    loop();
+
+
+
+    function init() {
+
+        isloop = true;
+        const container = document.getElementById("scene");
+        const container1 = document.getElementById("3dScene");
+        // ------------------------------------ *** ---------------------------------------
+        camera = new THREE.PerspectiveCamera(
+            75,
+            window.innerWidth / window.innerHeight,
+            2,
+            1000
+        );
+        camera.position.set(40, 20, 40);
+        scene = new THREE.Scene();
+        scene.background = new THREE.Color(0xcccccc);
+
+        renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.toneMappingExposure = 1;
+        renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.setSize(container1.clientWidth, window.innerHeight);
+        renderer.outputEncoding = THREE.sRGBEncoding;
+
+        container.appendChild(renderer.domElement);
+
+        var light = new THREE.PointLight(0xffffff, 2);
+        light.position.set(100, 100, 100);
+        scene.add(light);
+
+
+
+        // LOAD TEXTURE
+        const rgbe_loader = new RGBELoader();
+
+        rgbe_loader.setDataType(THREE.UnsignedByteType);
+        rgbe_loader.load(hdr, function (texture) {
+            const pmremGenerator = new THREE.PMREMGenerator(renderer);
+            const envMap = pmremGenerator.fromEquirectangular(texture).texture;
+
+            scene.background = envMap;
+            scene.environment = envMap;
+
+            render();
+        });
+
+        // VIEW CONTROLS
+        const controls = new OrbitControls(camera, renderer.domElement);
+        controls.addEventListener("change", render);
+        controls.minDistance = 1;
+        controls.maxDistance = 40;
+        controls.target.set(0, 0.5, 0);
+        controls.mouseButtons = {
+            LEFT: THREE.MOUSE.ROTATE,
+            MIDDLE: THREE.MOUSE.DOLLY,
+            RIGHT: THREE.MOUSE.PAN,
+        };
+        // controls.minPolarAngle = 0;
+        // controls.maxPolarAngle = Math.PI / 2;
+        controls.update();
+
+        window.addEventListener("resize", onWindowResize, false);
+
+        loadModel('/models/sink_with_faucet/scene.gltf',30,30,30);
+    }
+
+    function loadModel(modelPath, x = 0.1, y = 0.1, z = 0.1) {
+        gltf_loader.load(modelPath, function (gltf) {
+            scene.remove(car);
+            car = gltf.scene;
+            gltf.scene.scale.set(x, y, z);
+            scene.add(car);
+            render();
+        });
+    }
+
+    function onWindowResize() {
+        const container1 = document.getElementById("3dScene");
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(container1.clientWidth, 920);
+        render();
+    }
+
+    function render() {
+        renderer.render(scene, camera);
+    }
+
+    function loop() {
+        try {
+            if(isloop)
+            {
+            requestAnimationFrame(loop);
+            car.rotation.y += -0.0005;
+            renderer.render(scene, camera);
+            }
+
+        } catch (e) {
+            console.log("Error in loop function")
+        }
+
+
+    }
+		</script>
+
+	</body>
+</html>
