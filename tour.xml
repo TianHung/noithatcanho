@@ -105,7 +105,7 @@
 		<hotspot name="hs_video"
          url.html5="plugins/videoplayer.js"
          videourl="videos/video1.mp4"
-				 distorted="true" ath="77.336" atv="-4.731" rx="-4.0" ry="11.3" rz="-0.2" scale="0.408" alpha="1.5"
+				 distorted="true" ath="77.375" atv="-4.731" rx="-4.0" ry="11.3" rz="-0.2" scale="0.181" alpha="1.5"
 				 pausedonstart="false"
          loop="true"
          volume="0.7"
@@ -136,6 +136,17 @@
 		<hotspot name="scene_phong_khach_3" style="hs_circle" ath="-108.977" atv="-0.054" linkedscene="scene_phong_khach_3" tag="Phòng Khách 3"/>
 		<hotspot name="scene_phong_khach_4" style="hs_circle" ath="-37.346" atv="1.077" linkedscene="scene_phong_khach_4" tag="Nhà Bếp"/>
 		<hotspot name="scene_phong_khach_5" style="hs_circle" ath="179.608" atv="11.902" linkedscene="scene_phong_khach_5" tag="Hành Lang Phòng Ngủ"/>
+		<hotspot name="hs_video"
+         url.html5="plugins/videoplayer.js"
+         videourl="videos/video1.mp4"
+				 distorted="true" ath="47.217" atv="-2.973" rx="-2.8" ry="-44.9" rz="0.4" scale="0.115" alpha="1.9"
+				 pausedonstart="false"
+         loop="true"
+         volume="0.7"
+         directionalsound="true"
+         range="120"
+         onclick="togglepause();"
+         />
 
 	</scene>
 
@@ -218,7 +229,7 @@
 			</level>
 		</image>
 		<hotspot name="scene_phong_khach_5" style="hs_circle" ath="-154.703" atv="-6.326" linkedscene="scene_phong_khach_5" tag="Hành Lang Phòng Ngủ"/>
-		<hotspot name="Bon_rua_matVT" style="hs_circle" title="Bồn rửa mặt VT" onhover="showtext('Bồn rửa mặt VT');" ath="-51.967" atv="7.192" linkedscene="Bon_rua_matVT" onclick="js(CallFancy('/Viewer3D.html'));js(ChangeTitleByPdfName('Bồn rửa mặt VT cao cấp')))" tag="Bồn rửa mặt" />
+		<hotspot name="Bon_rua_matVT" style="hs_circle" title="Bồn rửa mặt VT" ath="-51.967" atv="7.192" linkedscene="Bon_rua_matVT" onclick="js(CallFancy('/Viewer3D.html'));js(ChangeTitleByPdfName('Bồn rửa mặt VT cao cấp')))" tag="Bồn rửa mặt" />
 
 	</scene>
 
