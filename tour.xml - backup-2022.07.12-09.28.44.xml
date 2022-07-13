@@ -1,0 +1,257 @@
+﻿<krpano version="1.19" title="Virtual Tour">
+
+	<include url="skin/vtourskin.xml" />
+	<include url="plugins/circle_hotspots.xml"/>
+	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
+	<skin_settings maps="false"
+	               maps_type="google"
+	               maps_bing_api_key=""
+	               maps_google_api_key=""
+	               maps_zoombuttons="false"
+	               gyro="true"
+	               webvr="true"
+	               webvr_gyro_keeplookingdirection="false"
+	               webvr_prev_next_hotspots="true"
+	               littleplanetintro="false"
+	               title="true"
+	               thumbs="true"
+	               thumbs_width="120" thumbs_height="80" thumbs_padding="10" thumbs_crop="0|40|240|160"
+	               thumbs_opened="false"
+	               thumbs_text="false"
+	               thumbs_dragging="true"
+	               thumbs_onhoverscrolling="false"
+	               thumbs_scrollbuttons="false"
+	               thumbs_scrollindicator="false"
+	               thumbs_loop="false"
+	               tooltips_buttons="false"
+	               tooltips_thumbs="false"
+	               tooltips_hotspots="false"
+	               tooltips_mapspots="false"
+	               deeplinking="false"
+	               loadscene_flags="MERGE"
+	               loadscene_blend="OPENBLEND(0.5, 0.0, 0.75, 0.05, linear)"
+	               loadscene_blend_prev="SLIDEBLEND(0.5, 180, 0.75, linear)"
+	               loadscene_blend_next="SLIDEBLEND(0.5,   0, 0.75, linear)"
+	               loadingtext="loading..."
+	               layout_width="100%"
+	               layout_maxwidth="814"
+	               controlbar_width="-24"
+	               controlbar_height="40"
+	               controlbar_offset="20"
+	               controlbar_offset_closed="-40"
+	               controlbar_overlap.no-fractionalscaling="10"
+	               controlbar_overlap.fractionalscaling="0"
+	               design_skin_images="vtourskin.png"
+	               design_bgcolor="0x2D3E50"
+	               design_bgalpha="0.8"
+	               design_bgborder="0"
+	               design_bgroundedge="1"
+	               design_bgshadow="0 4 10 0x000000 0.3"
+	               design_thumbborder_bgborder="3 0xFFFFFF 1.0"
+	               design_thumbborder_padding="2"
+	               design_thumbborder_bgroundedge="0"
+	               design_text_css="color:#FFFFFF; font-family:Arial;"
+	               design_text_shadow="1"
+	               />
+
+	<!--
+	    For an alternative skin design either change the <skin_settings> values
+	    from above or optionally include one of the predefined designs from below.
+	-->
+	<!-- <include url="skin/vtourskin_design_flat_light.xml"  /> -->
+	<!-- <include url="skin/vtourskin_design_glass.xml"       /> -->
+	<!-- <include url="skin/vtourskin_design_ultra_light.xml" /> -->
+	<!-- <include url="skin/vtourskin_design_117.xml"         /> -->
+	<!-- <include url="skin/vtourskin_design_117round.xml"    /> -->
+	<!-- <include url="skin/vtourskin_design_black.xml"       /> -->
+
+
+	<!-- startup action - load the first scene -->
+	<action name="startup" autorun="onstart">
+		if(startscene === null OR !scene[get(startscene)], copy(startscene,scene[0].name); );
+		loadscene(get(startscene), null, MERGE);
+		if(startactions !== null, startactions() );
+	</action>
+
+
+
+	<scene name="scene_phong_khach_1" title="Phong Khach 1" onstart="" thumburl="panos/Phong_Khach_1.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/Phong_Khach_1.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="1792" tiledimageheight="1792">
+				<cube url="panos/Phong_Khach_1.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1024" tiledimageheight="1024">
+				<cube url="panos/Phong_Khach_1.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_phong_khach_5" style="hs_circle" ath="-45.754" atv="-4.016" linkedscene="scene_phong_khach_5" tag="Hành Lang Phòng Ngủ"/>
+		<hotspot name="scene_phong_khach_2" style="hs_circle" ath="0.261" atv="23.261" linkedscene="scene_phong_khach_2" tag="Phòng Khách 2"/>
+		<hotspot name="scene_phong_khach_3" style="hs_circle" ath="-1.441" atv="-4.184" linkedscene="scene_phong_khach_3" tag="Phòng Khách 3"/>
+		<hotspot name="scene_phong_khach_4" style="hs_circle" ath="37.288" atv="-2.812" linkedscene="scene_phong_khach_4" tag="Phòng Khách 4"/>
+
+	</scene>
+
+	<scene name="scene_phong_khach_2" title="Phong Khach 2" onstart="" thumburl="panos/Phong_Khach_2.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/Phong_Khach_2.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="1792" tiledimageheight="1792">
+				<cube url="panos/Phong_Khach_2.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1024" tiledimageheight="1024">
+				<cube url="panos/Phong_Khach_2.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_phong_khach_1" style="hs_circle" ath="84.614" atv="14.368" linkedscene="scene_phong_khach_1" tag="Phòng Khách 1"/>
+		<hotspot name="scene_phong_khach_3" style="hs_circle" ath="-108.977" atv="-0.054" linkedscene="scene_phong_khach_3" tag="Phòng Khách 3"/>
+		<hotspot name="scene_phong_khach_4" style="hs_circle" ath="-37.346" atv="1.077" linkedscene="scene_phong_khach_4" tag="Phòng Khách 4"/>
+		<hotspot name="scene_phong_khach_5" style="hs_circle" ath="179.608" atv="11.902" linkedscene="scene_phong_khach_5" tag="Hành Lang Phòng Ngủ"/>
+
+	</scene>
+
+	<scene name="scene_phong_khach_3" title="Phong Khach 3" onstart="" thumburl="panos/Phong_Khach_3.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/Phong_Khach_3.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="1792" tiledimageheight="1792">
+				<cube url="panos/Phong_Khach_3.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1024" tiledimageheight="1024">
+				<cube url="panos/Phong_Khach_3.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_phong_khach_4" style="hs_circle" ath="4.152" atv="-3.397" linkedscene="scene_phong_khach_4" tag="Phòng Khách 4"/>
+		<hotspot name="scene_phong_khach_2" style="hs_circle" ath="83.729" atv="24.729" linkedscene="scene_phong_khach_2" tag="Phòng Khách 2"/>
+		<hotspot name="scene_phong_khach_1" style="hs_circle" ath="87.603" atv="9.034" linkedscene="scene_phong_khach_1" tag="Phòng Khách 1"/>
+		<hotspot name="scene_phong_khach_5" style="hs_circle" ath="138.146" atv="-7.580" linkedscene="scene_phong_khach_5" tag="Hành Lang Phòng Ngủ"/>
+
+	</scene>
+
+	<scene name="scene_phong_khach_4" title="Phong Khach 4" onstart="" thumburl="panos/Phong_Khach_4.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/Phong_Khach_4.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="1792" tiledimageheight="1792">
+				<cube url="panos/Phong_Khach_4.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1024" tiledimageheight="1024">
+				<cube url="panos/Phong_Khach_4.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_phong_khach_3" style="hs_circle" ath="20.441" atv="-2.086" linkedscene="scene_phong_khach_3" tag="Phòng Khách 3"/>
+		<hotspot name="scene_phong_khach_2" style="hs_circle" ath="-24.901" atv="19.316" linkedscene="scene_phong_khach_2" tag="Phòng Khách 2"/>
+		<hotspot name="scene_phong_khach_1" style="hs_circle" ath="-46.576" atv="0.130" linkedscene="scene_phong_khach_1" tag="Phòng Khách 1"/>
+		<hotspot name="scene_phong_khach_5" style="hs_circle" ath="-14.635" atv="-1.562" linkedscene="scene_phong_khach_5" tag="Hành Lang Phòng Ngủ"/>
+
+	</scene>
+
+	<scene name="scene_phong_khach_5" title="Phong Khach 5" onstart="" thumburl="panos/Phong_Khach_5.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/Phong_Khach_5.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="1792" tiledimageheight="1792">
+				<cube url="panos/Phong_Khach_5.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1024" tiledimageheight="1024">
+				<cube url="panos/Phong_Khach_5.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_phong_khach_2" style="hs_circle" ath="-0.131" atv="8.966" linkedscene="scene_phong_khach_2" tag="Phòng Khách 2"/>
+		<hotspot name="scene_phong_ngu_1" style="hs_circle" ath="-14.122" atv="-4.113" linkedscene="scene_phong_ngu_1" tag="Phòng Ngủ 1"/>
+		<hotspot name="scene_phong_ngu_2" style="hs_circle" ath="53.691" atv="-6.736" linkedscene="scene_phong_ngu_2" tag="Phòng Ngủ 2"/>
+		<hotspot name="scene_phong_ngu_3" style="hs_circle" ath="129.264" atv="-10.296" linkedscene="scene_phong_ngu_3" tag="Phòng Ngủ 3"/>
+
+	</scene>
+
+	<scene name="scene_Phong_Ngu_1" title="Phong Ngu 1" onstart="" thumburl="panos/Phong_Ngu_1.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/Phong_Ngu_1.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="1792" tiledimageheight="1792">
+				<cube url="panos/Phong_Ngu_1.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1024" tiledimageheight="1024">
+				<cube url="panos/Phong_Ngu_1.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_phong_khach_5" style="hs_circle" ath="-159.330" atv="-5.724" linkedscene="scene_phong_khach_5" tag="Hành Lang Phòng Ngủ"/>
+
+	</scene>
+
+	<scene name="scene_Phong_Ngu_2" title="Phong Ngu 2" onstart="" thumburl="panos/Phong_Ngu_2.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/Phong_Ngu_2.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="1792" tiledimageheight="1792">
+				<cube url="panos/Phong_Ngu_2.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1024" tiledimageheight="1024">
+				<cube url="panos/Phong_Ngu_2.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_phong_khach_5" style="hs_circle" ath="-120.334" atv="-7.162" linkedscene="scene_phong_khach_5" tag="Hành Lang Phòng Ngủ"/>
+
+	</scene>
+
+	<scene name="scene_Phong_Ngu_3" title="Phong Ngu 3" onstart="" thumburl="panos/Phong_Ngu_3.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/Phong_Ngu_3.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="1792" tiledimageheight="1792">
+				<cube url="panos/Phong_Ngu_3.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1024" tiledimageheight="1024">
+				<cube url="panos/Phong_Ngu_3.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_phong_thay_do" style="hs_circle" ath="70.021" atv="2.298" linkedscene="scene_phong_thay_do" tag="Phòng Thay Đồ"/>
+		<hotspot name="scene_phong_khach_5" style="hs_circle" ath="129.724" atv="-2.473" linkedscene="scene_phong_khach_5" tag="Hành Lang Phòng Ngủ"/>
+
+	</scene>
+
+	<scene name="scene_Phong_Thay_Do" title="Phong Thay Do" onstart="" thumburl="panos/Phong_Thay_Do.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/Phong_Thay_Do.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="1792" tiledimageheight="1792">
+				<cube url="panos/Phong_Thay_Do.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1024" tiledimageheight="1024">
+				<cube url="panos/Phong_Thay_Do.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_phong_ngu_3" style="hs_circle" ath="-98.179" atv="13.769" linkedscene="scene_phong_ngu_3" tag="Phòng Ngủ 3"/>
+
+	</scene>
+
+
+</krpano>
