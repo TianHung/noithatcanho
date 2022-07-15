@@ -86,7 +86,7 @@
 
 	<scene name="scene_phong_khach_1" title="Phòng Khách 1" onstart=""  thumburl="panos/Phong_Khach_1.tiles/thumb.jpg" lat="" lng="" heading="">
 
-		<view hlookat="181.214" vlookat="-0.954" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+		<view hlookat="91.648" vlookat="0.166" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
 		<preview url="panos/Phong_Khach_1.tiles/preview.jpg" />
 
@@ -98,27 +98,45 @@
 				<cube url="panos/Phong_Khach_1.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
 			</level>
 		</image>
+		<!-- <hotspot name="scene_phong_khach_5" style="hs_circle" ath="-47.174" atv="-5.302" linkedscene="scene_phong_khach_5" tag="Hành Lang Phòng Ngủ"/> -->
 		<hotspot name="scene_phong_khach_4" style="hs_circle" ath="37.288" atv="-2.812" linkedscene="scene_phong_khach_4" tag="Nhà Bếp"/>
 		<hotspot name="scene_phong_khach_5" style="hs_circle" ath="-47.174" atv="-5.302" linkedscene="scene_phong_khach_5" tag="Hành Lang Phòng Ngủ"/>
 		<hotspot name="scene_phong_khach_3" style="hs_circle" ath="-12.878" atv="-5.222" linkedscene="scene_phong_khach_3" tag="Phòng Khách 3"/>
-		<hotspot name="scene_phong_khach_2" style="hs_circle" ath="6.225" atv="21.083" linkedscene="scene_phong_khach_2" tag="Vị Trí Trung Tâm Phòng"/>
+		<hotspot name="scene_phong_khach_2" style="hs_circle" ath="3.263" atv="-3.692" linkedscene="scene_phong_khach_2" tag="Vị Trí Trung Tâm Phòng"/>
 		<hotspot name="hs_video"
 		 				 url="videoplayer.swf"
-		         url.html5="plugins/videoplayer.js"
-		         videourl="videos/video2.mp4"
+		          url.html5="plugins/videoplayer.js"
+		          videourl="videos/video2.mp4"
 		 				 distorted="true" ath="77.375" atv="-4.731" rx="-4.0" ry="11.3" rz="-0.2" scale="0.181" alpha="1.5"
-		         volume="0.3"
+		          volume="0.3"
 		 				 loop="true"
 		 				 pausedonstart="false"
-		         directionalsound="true"
-		         range="120"
-		         onclick="togglepause(); switch(soundinterface.mute); "
-
+		          directionalsound="true"
+		          range="120"
+							onvideoready="if(ispaused,togglepause());"
+		          onclick="togglepause(); switch(soundinterface.mute); "
 		          />
-							<!-- onstart="playvideo(videos/video2.mp4)" -->
-							<!-- onhover="if(ispaused, showtext(click to play), showtext(click to pause));" -->
-		<!-- <events name="myevents" onloadcomplete="hotspot[video2].play();" keep="true" /> -->
+		<!-- <hotspot name="video1"
+				 url="videoplayer.swf"
+				 url.html5="plugins/videoplayer.js"
+				 videourl="videos/video2.mp4"
+				 distorted="true"
+				 ath="77.375" atv="-4.731" rx="-4.0" ry="11.3" rz="-0.2" scale="0.181" alpha="1.5"
+				 edge="center"
+				 loop="true"
+				 pausedonstart="false"
+				 directionalsound="true"
+				 range="120"
+				 volume="0.3"
+				 onvideoready="if(ispaused,togglepause());"
+         onvideoplay=""
+         onvideopaused=""
+         onvideocomplete=""
+				 onhover="if(ispaused, showtext(click to play), showtext(click to pause));"
+				 onclick="togglepause(); switch(soundinterface.mute); "
+				 />-->
 
+	  <!-- <events name="myevents" onloadcomplete="hotspot[video1].play();" keep="true" /> -->
 
 	</scene>
 
