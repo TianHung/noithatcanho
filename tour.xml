@@ -5,6 +5,8 @@
 	<include url="plugins/circle_hotspots.xml"/>
 	<!-- <include url="plugins/videospot_editor.xml" /> -->
 
+	<layer name="skin_logo" url="skin/logo.png" keep="true" scale="0.13" x="1300" y="12" enabled="false"/>
+
 	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
 	<skin_settings maps="false"
 	               maps_type="google"
@@ -85,9 +87,7 @@
 
 
 	<scene name="scene_phong_khach_1" title="Phòng Khách 1" onstart=""  thumburl="panos/Phong_Khach_1.tiles/thumb.jpg" lat="" lng="" heading="">
-
 		<view hlookat="0.343" vlookat="2.287" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
-
 		<preview url="panos/Phong_Khach_1.tiles/preview.jpg" />
 
 		<image type="CUBE" multires="true" tilesize="512">
@@ -102,7 +102,7 @@
 		<hotspot name="scene_phong_khach_5" style="hs_circle" ath="-47.174" atv="-5.302" linkedscene="scene_phong_khach_5" tag="Hành Lang Phòng Ngủ"/>
 		<hotspot name="scene_phong_khach_3" style="hs_circle" ath="-12.878" atv="-5.222" linkedscene="scene_phong_khach_3" tag="Phòng Khách 3"/>
 		<hotspot name="scene_phong_khach_2" style="hs_circle" ath="6.225" atv="21.083" linkedscene="scene_phong_khach_2" tag="Vị Trí Trung Tâm Phòng"/>
-		<hotspot name="hs_video"
+		<hotspot name="video1"
 		 				 url="videoplayer.swf"
 		         url.html5="plugins/videoplayer.js"
 		         videourl="videos/video2.mp4"
@@ -113,10 +113,10 @@
 		         directionalsound="true"
 		         range="120"
 		         onclick="togglepause(); switch(soundinterface.mute); "
-
+						 onhover="if(ispaused, showtext(Ấn vào để phát video), showtext(Ấn vào để tạm dừng video));"
 		          />
 							<!-- onstart="playvideo(videos/video2.mp4)" -->
-							<!-- onhover="if(ispaused, showtext(click to play), showtext(click to pause));" -->
+
 		<!-- <events name="myevents" onloadcomplete="hotspot[video2].play();" keep="true" /> -->
 
 
@@ -152,7 +152,6 @@
          range="120"
          onclick="togglepause(); switch(soundinterface.mute); "
          />
-
 	</scene>
 
 	<scene name="scene_phong_khach_3" title="Phòng Khách 3" onstart="" thumburl="panos/Phong_Khach_3.tiles/thumb.jpg" lat="" lng="" heading="">

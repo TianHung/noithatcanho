@@ -402,22 +402,22 @@
 				<layer name="skin_logo2" keep="true" type="image" style="skin_base" url="logo.png" blendmode="normal" devices="mobile" align="center" x="0" y="-100" scale="0.16" alpha="1" />
 
 				<layer name="skin_menu_button_bg1" type="container" align="center" width="80%" height="10%" x="0" y="-12%" bgcolor="get:skin_settings.design_bg_btn_menu_color" bgalpha="1">
-					<layer name="skin_button_icon1" style="skin_base" url="icon-01.png"  align="left" x="0" y="0" scale="0.1" alpha="1" onclick="skin_gotoscene(0);" />
+					<layer name="skin_button_icon1" style="skin_base" url="icon-01.png"  align="left" x="0" y="0" scale="0.06" alpha="1" onclick="skin_gotoscene(0);" />
 					<layer name="skin_button_name1" type="text" html="get:skin_settings.buttonMenuTxt1" align="center" x="0" y="0" scale="1" bgalpha="0" font-size="20px" css="text-align:center; color:0xffffff; font-family:Arial; font-weight:bold; font-size:20px;"/>
 				</layer>
 
 				<layer name="skin_menu_button_bg2" type="container" align="center" width="80%" height="10%" x="0" y="0" bgcolor="get:skin_settings.design_bg_btn_menu_color" bgalpha="1">
-					<layer name="skin_button_icon2" style="skin_base" url="icon-02.png"  align="left" x="0" y="0" scale="0.1" alpha="1" onclick="skin_gotoscene(0);" />
+					<layer name="skin_button_icon2" style="skin_base" url="icon-02.png"  align="left" x="0" y="0" scale="0.06" alpha="1" onclick="skin_gotoscene(0);" />
 					<layer name="skin_button_name2" type="text" html="get:skin_settings.buttonMenuTxt2" align="center" x="0" y="0" scale="1" bgalpha="0" font-size="20px" css="text-align:center; color:0xffffff; font-family:Arial; font-weight:bold; font-size:20px;"/>
 				</layer>
 
 				<layer name="skin_menu_button_bg3" type="container" align="center" width="80%" height="10%" x="0" y="12%" bgcolor="get:skin_settings.design_bg_btn_menu_color" bgalpha="1">
-					<layer name="skin_button_icon3" style="skin_base" url="icon-03.png"  align="left" x="0" y="0" scale="0.1" alpha="1" onclick="skin_gotoscene(0);" />
+					<layer name="skin_button_icon3" style="skin_base" url="icon-03.png"  align="left" x="0" y="0" scale="0.06" alpha="1" onclick="skin_gotoscene(0);" />
 					<layer name="skin_button_name3" type="text" html="get:skin_settings.buttonMenuTxt3" align="center" x="0" y="0" scale="1" bgalpha="0" font-size="20px" css="text-align:center; color:0xffffff; font-family:Arial; font-weight:bold; font-size:20px;"/>
 				</layer>
 
 				<layer name="skin_menu_button_bg4" type="container" align="center" width="80%" height="10%" x="0" y="24%" bgcolor="get:skin_settings.design_bg_btn_menu_color" bgalpha="1">
-					<layer name="skin_button_icon4" style="skin_base" url="icon-04.png"  align="left" x="0" y="0" scale="0.1" alpha="1" onclick="skin_gotoscene(0);" />
+					<layer name="skin_button_icon4" style="skin_base" url="icon-04.png"  align="left" x="0" y="0" scale="0.06" alpha="1" onclick="skin_gotoscene(0);" />
 					<layer name="skin_button_name4" type="text" html="get:skin_settings.buttonMenuTxt4" align="center" x="0" y="0" scale="1" bgalpha="0" font-size="20px" css="text-align:center; color:0xffffff; font-family:Arial; font-weight:bold; font-size:20px;"/>
 				</layer>
 
@@ -895,6 +895,7 @@
 			set(layer[get(name)].y_closed, calc(layer[get(name)].y - skin_settings.controlbar_offset - skin_settings.controlbar_height + skin_settings.controlbar_offset_closed));
 		);
 	</action>
+
 
 
 	<action name="skin_hideskin" scope="local" args="hidetimemode">
